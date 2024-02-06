@@ -1,7 +1,0 @@
-configparser
-jsonlines
-minio
-pre-commit
-requests
-splunk-sdk
-urllib3
