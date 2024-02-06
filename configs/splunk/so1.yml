@@ -1,0 +1,6 @@
+splunk:
+  hec:
+    enable: True
+    ssl: True
+    token: abcd-1234-efgh-5678
+    port: 8088

@@ -1,0 +1,19 @@
+services:
+  so1:
+    image: ${SPLUNK_IMAGE:-splunk/splunk:latest}
+    platform: linux/amd64
+    hostname: so1
+    environment:
+      - TZ=${TZ:-Europe/Brussels}
+      - SPLUNK_START_ARGS=--accept-license
+      - SPLUNK_STANDALONE_URL=so1
+      - SPLUNK_PASSWORD
+      - SPLUNK_APPS_URL
+      - SPLUNKBASE_USERNAME
+      - SPLUNKBASE_PASSWORD
+    ports:
+      - 8000:8000
+      - 8088:8088
+      - 8089:8089
+    volumes:
+      - ./configs/splunk/so1.yml:/tmp/defaults/default.yml
