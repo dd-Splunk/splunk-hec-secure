@@ -11,9 +11,11 @@ services:
       - SPLUNK_APPS_URL
       - SPLUNKBASE_USERNAME
       - SPLUNKBASE_PASSWORD
+      - SPLUNK_APPS_URL=https://splunkbase.splunk.com/app/4353/release/1.7.15/download
     ports:
       - 8000:8000
       - 8088:8088
       - 8089:8089
     volumes:
       - ./configs/splunk/so1.yml:/tmp/defaults/default.yml
+      - ./app:/opt/splunk/etc/apps/splunk-hec-secure

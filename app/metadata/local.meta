@@ -1,0 +1,11 @@
+[app/ui]
+version = 9.2.0
+modtime = 1707224962.051949000
+
+[app/launcher]
+version = 9.2.0
+modtime = 1707224962.053229000
+
+[app/package/check_for_updates]
+version = 9.2.0
+modtime = 1707224962.053691000
