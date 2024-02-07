@@ -168,3 +168,6 @@ cython_debug/
 
 # No certs
 *.pem
+
+# No 1password config
+.config/
