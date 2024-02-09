@@ -1,5 +1,6 @@
 splunk:
   hec:
+    no_log: True
     enable: True
     ssl: True
     token: abcd-1234-efgh-5678

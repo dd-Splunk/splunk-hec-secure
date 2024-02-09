@@ -18,4 +18,3 @@ services:
       - 8089:8089
     volumes:
       - ./configs/splunk/so1.yml:/tmp/defaults/default.yml
-      - ./app:/opt/splunk/etc/apps/splunk-hec-secure
