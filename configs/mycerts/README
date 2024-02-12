@@ -1,1 +1,8 @@
 Place custom certs here
+
+Expecting the following here:
+
+fullchain.pem
+hec.pem
+isrgrootx1.pem
+privkey.pem
