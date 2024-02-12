@@ -53,7 +53,7 @@ I am adding a few things I found helpful for anyone using Certbot/LetsEncrypt
 ```bash
 cd /etc/letsencrypt/live/your-server-hostname/
 cat cert.pem privkey.pem chain.pem > splunk.pem
-chmod 777 splunk.pem
+chmod 600 splunk.pem
 ```
 
 - Use the following for `inputs.conf`

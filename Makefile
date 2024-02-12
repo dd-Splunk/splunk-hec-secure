@@ -21,7 +21,7 @@ dc:
 
 up: .env
 	date +"Now time is %FT%T%z"
-	$(DC) up --build -d
+	$(DC) up -d
 	date +"Now time is %FT%T%z"
 
 token: .env
