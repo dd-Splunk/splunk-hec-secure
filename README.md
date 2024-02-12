@@ -56,7 +56,7 @@ cat cert.pem privkey.pem chain.pem > splunk.pem
 chmod 777 splunk.pem
 ```
 
-- Use the following for inputs.conf
+- Use the following for `inputs.conf`
 
 ```ìni
 [http]
