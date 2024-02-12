@@ -2,7 +2,7 @@ services:
   so1:
     image: ${SPLUNK_IMAGE:-splunk/splunk:latest}
     platform: linux/amd64
-    hostname: so1
+    hostname: splunk
     environment:
       - TZ=${TZ:-Europe/Brussels}
       - SPLUNK_START_ARGS=--accept-license
@@ -18,3 +18,4 @@ services:
       - 8089:8089
     volumes:
       - ./configs/splunk/so1.yml:/tmp/defaults/default.yml
+      - ./configs/mycerts/:/opt/splunk/etc/auth/mycerts/
