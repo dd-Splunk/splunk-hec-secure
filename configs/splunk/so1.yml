@@ -5,19 +5,27 @@ splunk:
     token: abcd-1234-efgh-5678
     port: 8088
   conf:
+    - key: inputs
+      value:
+        directory: /opt/splunk/etc/system/local
+        content:
+          # Make sure HEC uses our custom cert i.o. splunk self signed
+          http:
+            serverCert: /opt/splunk/etc/auth/mycerts/hec.pem
     - key: server
       value:
         directory: /opt/splunk/etc/system/local
         content:
+          # Add Let's Encrypt Root CA
           sslConfig:
             sslRootCAPath: $SPLUNK_HOME/etc/auth/mycerts/isrgrootx1.pem
     - key: web
       value:
         directory: /opt/splunk/etc/system/local
         content:
+          # Do not use $SPLUNK_HOME in web.conf.
+          # You must use an absolute path
           settings:
-            # Do not use $SPLUNK_HOME in web.conf.
-            # You must use an absolute path
             enableSplunkWebSSL: true
             privKeyPath: /opt/splunk/etc/auth/mycerts/privkey.pem
             caCertPath: /opt/splunk/etc/auth/mycerts/fullchain.pem

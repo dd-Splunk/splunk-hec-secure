@@ -1,6 +1,8 @@
 # .SILENT:
 SHELL := /bin/bash
 .PHONY: dc up token logs down clean
+
+# Check with version of compose to use
 ifneq ($(shell docker compose version 2>/dev/null),)
   DC=docker compose
 else
