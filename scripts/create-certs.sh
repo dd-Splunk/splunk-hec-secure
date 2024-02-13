@@ -15,7 +15,8 @@ FQDN=${SPLUNK_HOST}.${DOMAIN}
 ROOT_CA=isrgrootx1.pem
 
 # Create cert
-# certbot certonly --standalone -d $FQDN
+# Use standalone mode as no Web server exists yet.
+certbot certonly --standalone -d $FQDN
 cd /etc/letsencrypt/live/$FQDN
 
 # Get Let's Encrypt Root CA
@@ -24,7 +25,8 @@ wget -q https://letsencrypt.org/certs/$ROOT_CA -O $APP_DIR/$ROOT_CA
 # Add Certs to the Splunk cert store
 cp fullchain.pem privkey.pem $APP_DIR
 
-# Create chain of certs for HEC
+# Create chain of certs for HEC:
+# https://community.splunk.com/t5/All-Apps-and-Add-ons/How-do-I-secure-the-event-collector-port-8088-with-an-ssl/m-p/571431/highlight/true#M75360
 cat cert.pem privkey.pem chain.pem > $APP_DIR/hec.pem
 
 # Ensure proper ownership
