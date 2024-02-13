@@ -8,7 +8,7 @@ PoC to secure HEC using Let's Encrypt certificates.
 
 - Create the certificates
 
-<https://github.com/dd-Splunk/splunk-hec-secure/blob/8c8b2f22d379c7365dea59b1fa28fd38680cde14/scripts/create-certs.sh#L3-L31>
+<https://github.com/dd-Splunk/splunk-hec-secure/blob/0c991a9c0b164b1f9b9bd9f6cc3e9af8327af499/scripts/create-certs.sh#L3-L31>
 
 At the end of the script the following should be
 in `$SPLUNK_HOME/etc/auth/mycerts`
