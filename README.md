@@ -1,10 +1,12 @@
 # Splunk HEC Secure
 
-PoC to secure HEC using Let's Encryot CERT
+PoC to secure HEC using Let's Encrypt certificates.
 
 ## Generate Certs for Web
 
 ### Steps
+
+<https://github.com/dd-Splunk/splunk-hec-secure/blob/ca6735c47e2f07c92ffff8f09c45bdbba38559ed/scripts/create-certs.sh>
 
 ```bash
 # Must be run as root
@@ -13,6 +15,8 @@ APP_DIR=$PWD/configs/mycerts
 DOMAIN=dessy.one
 SPLUNK_HOST=splunk
 FQDN=s${SPLUNK_HOST}.${DOMAIN}
+
+# Standalone as no server exists yet.
 certbot certonly --standalone -d $FQDN
 cd /etc/letsencrypt/live/$FQDN
 
@@ -30,10 +34,10 @@ chown splunk:splunk $APP_DIR/*.pem
 in `$SPLUNK_HOME/etc/auth/mycerts`
 
 ```
-fullchain.pem
-hec.pem
-isrgrootx1.pem
-privkey.pem
+-rw-r--r--. 1 splunk splunk 5242 Feb 12 16:06 fullchain.pem
+-rw-r--r--. 1 splunk splunk 5483 Feb 12 16:06 hec.pem
+-rw-r--r--. 1 splunk splunk 1939 Feb 12 16:06 isrgrootx1.pem
+-rw-------. 1 splunk splunk  241 Feb 12 16:06 privkey.pem
 
 ```
 
@@ -52,8 +56,8 @@ I am adding a few things I found helpful for anyone using Certbot/LetsEncrypt
 
 ```bash
 cd /etc/letsencrypt/live/your-server-hostname/
-cat cert.pem privkey.pem chain.pem > splunk.pem
-chmod 600 splunk.pem
+cat cert.pem privkey.pem chain.pem > hec.pem
+chmod 644 hec.pem
 ```
 
 - Use the following for `inputs.conf`
@@ -63,7 +67,7 @@ chmod 600 splunk.pem
 disabled = 0
 index = your-hec-index-name
 enableSSL = 1
-serverCert = /etc/letsencrypt/live/your-server-hostname/splunk.pem
+serverCert = /etc/letsencrypt/live/your-server-hostname/hec.pem
 sslPassword =
 crossOriginSharingPolicy = *
 ```
