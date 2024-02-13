@@ -6,7 +6,7 @@ PoC to secure HEC using Let's Encrypt certificates.
 
 ### Steps
 
-<https://github.com/dd-Splunk/splunk-hec-secure/blob/8c8b2f22d379c7365dea59b1fa28fd38680cde14/scripts/create-certs.sh#L1-31>
+<https://github.com/dd-Splunk/splunk-hec-secure/blob/8c8b2f22d379c7365dea59b1fa28fd38680cde14/scripts/create-certs.sh#L1-L31>
 
 ```bash
 # Must be run as root
