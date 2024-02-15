@@ -57,3 +57,11 @@ FQDN=${SPLUNK_HOST}.${DOMAIN}
 openssl s_client -connect $FQDN:8000
 openssl s_client -connect $FQDN:8000
 ```
+
+### Renew certificate
+
+Run the following ideally once per day:
+
+```bash
+sudo certbot renew
+```
