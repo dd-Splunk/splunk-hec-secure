@@ -2,6 +2,8 @@
 
 PoC to secure HEC using Let's Encrypt certificates.
 
+Stick to 9.1.2 for Mac with Apple Silicon at this moment.
+
 ## Generate Certs for Web
 
 ### Steps
