@@ -15,7 +15,7 @@ Stick to 9.1.2 for Mac with Apple Silicon at this moment.
 At the end of the script the following should be
 in `$SPLUNK_HOME/etc/auth/mycerts`
 
-```
+```bash
 -rw-r--r--. 1 splunk splunk 5242 Feb 12 16:06 fullchain.pem
 -rw-r--r--. 1 splunk splunk 5483 Feb 12 16:06 hec.pem
 -rw-r--r--. 1 splunk splunk 1939 Feb 12 16:06 isrgrootx1.pem
