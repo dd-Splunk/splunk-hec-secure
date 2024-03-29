@@ -20,12 +20,12 @@ repos:
     -   id: check-docstring-first
 
 -   repo: https://github.com/PyCQA/autoflake
-    rev: v2.2.1
+    rev: v2.3.1
     hooks:
     -   id: autoflake
         args: [--remove-all-unused-imports, --in-place]
 -   repo: https://github.com/psf/black
-    rev: 24.1.1
+    rev: 24.3.0
     hooks:
     -   id: black
         args: [--config=pyproject.toml]
@@ -53,3 +53,7 @@ repos:
         entry: mdl
         language: ruby
         files: \.(md|mdown|markdown)$
+-   repo: https://github.com/igorshubovych/markdownlint-cli.git
+    rev: v0.39.0
+    hooks:
+    -   id: markdownlint-fix
