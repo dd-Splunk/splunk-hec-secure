@@ -55,7 +55,7 @@ DOMAIN=dessy.one
 SPLUNK_HOST=splunk
 FQDN=${SPLUNK_HOST}.${DOMAIN}
 openssl s_client -connect $FQDN:8000
-openssl s_client -connect $FQDN:8000
+openssl s_client -connect $FQDN:8088
 ```
 
 ### Renew certificate

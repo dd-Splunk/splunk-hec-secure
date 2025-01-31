@@ -1,4 +1,4 @@
-# .SILENT:
+.SILENT:
 SHELL := /bin/bash
 .PHONY: dc up token logs down clean
 

@@ -8,7 +8,6 @@ services:
       - SPLUNK_START_ARGS=--accept-license
       - SPLUNK_STANDALONE_URL=so1
       - SPLUNK_PASSWORD
-      - SPLUNK_APPS_URL
       - SPLUNKBASE_USERNAME
       - SPLUNKBASE_PASSWORD
       - SPLUNK_APPS_URL=https://splunkbase.splunk.com/app/4353/release/1.7.15/download

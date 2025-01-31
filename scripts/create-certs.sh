@@ -14,13 +14,13 @@ SPLUNK_HOST=splunk
 FQDN=${SPLUNK_HOST}.${DOMAIN}
 ROOT_CA=isrgrootx1.pem
 
+# Get Let's Encrypt Root CA
+wget -q https://letsencrypt.org/certs/$ROOT_CA -O $APP_DIR/$ROOT_CA
+
 # Create cert
 # Use standalone mode as no Web server exists yet.
 certbot certonly --standalone -d $FQDN
 cd /etc/letsencrypt/live/$FQDN
-
-# Get Let's Encrypt Root CA
-wget -q https://letsencrypt.org/certs/$ROOT_CA -O $APP_DIR/$ROOT_CA
 
 # Add Certs to the Splunk cert store
 cp fullchain.pem privkey.pem $APP_DIR

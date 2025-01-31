@@ -6,6 +6,7 @@ splunk:
     port: 8088
   conf:
     - key: inputs
+      # HEC
       value:
         directory: /opt/splunk/etc/system/local
         content:
@@ -13,6 +14,7 @@ splunk:
           http:
             serverCert: /opt/splunk/etc/auth/mycerts/hec.pem
     - key: server
+      # Replaces the depracated caCertFile entry in inputs.conf/http
       value:
         directory: /opt/splunk/etc/system/local
         content:
@@ -20,6 +22,7 @@ splunk:
           sslConfig:
             sslRootCAPath: $SPLUNK_HOME/etc/auth/mycerts/isrgrootx1.pem
     - key: web
+      # Slunk Web
       value:
         directory: /opt/splunk/etc/system/local
         content:
