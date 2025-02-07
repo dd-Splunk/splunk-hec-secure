@@ -41,7 +41,7 @@ Send a test event:
 DOMAIN=dessy.one
 SPLUNK_HOST=splunk
 FQDN=${SPLUNK_HOST}.${DOMAIN}
-curl -k https://$FQDN:8088/services/collector/event \
+curl https://$FQDN:8088/services/collector/event \
 -H "Authorization: Splunk abcd-1234-efgh-5678" \
 -d '{"event":"hello world"}' -v
 ```

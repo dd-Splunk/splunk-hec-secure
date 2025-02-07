@@ -13,9 +13,13 @@ DOMAIN=dessy.one
 SPLUNK_HOST=splunk
 FQDN=${SPLUNK_HOST}.${DOMAIN}
 ROOT_CA=isrgrootx1.pem
+APPS_CA=appsCA.pem
 
 # Get Let's Encrypt Root CA
 wget -q https://letsencrypt.org/certs/$ROOT_CA -O $APP_DIR/$ROOT_CA
+
+# Stop Apache in case it is running
+systemctl stop apache2
 
 # Create cert
 # Use standalone mode as no Web server exists yet.

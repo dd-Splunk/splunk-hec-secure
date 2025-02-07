@@ -10,7 +10,7 @@ services:
       - SPLUNK_PASSWORD
       - SPLUNKBASE_USERNAME
       - SPLUNKBASE_PASSWORD
-      - SPLUNK_APPS_URL=https://splunkbase.splunk.com/app/4353/release/1.7.15/download
+      - SPLUNK_APPS_URL=https://splunkbase.splunk.com/app/4353/release/1.7.16/download
     ports:
       - 8000:8000
       - 8088:8088

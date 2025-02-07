@@ -20,7 +20,9 @@ splunk:
         content:
           # Add Let's Encrypt Root CA
           sslConfig:
-            sslRootCAPath: $SPLUNK_HOME/etc/auth/mycerts/isrgrootx1.pem
+            # sslRootCAPath: $SPLUNK_HOME/etc/auth/mycerts/isrgrootx1.pem
+            # Using Splunkbase as rootca as it also has isrgrootx1.pem in it
+            sslRootCAPath: $SPLUNK_HOME/etc/auth/appsCA.pem
     - key: web
       # Slunk Web
       value:
